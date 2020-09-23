@@ -1,0 +1,14 @@
+Important Note: Make sure Word-Wrap is turned on (Format menu) when viewing this document in Notepad.
+
+
+- Testing SimpleClient and SimpleServer on ech other
+
+In order to do this, you must compile 1 or both of the examples. The examples, to be as simple as possible, use blocking sockets. This means that functions do not return for quite some time. Because of the way the Visual Basic Interperetor works in the IDE, a blocking function used in one instance of Visual Basic, can also block other programs running in seperate instances of the Visual Basic IDE. If you start the server, it will start blocking until a connection request is recieved. If you then run the client from the IDE. It is also blocked by the server program, so you are unable to click the connect button. The solution: Compile and run the server, the client or even both.
+
+- Using SimpleClient
+
+In the edit box labelled "Host Name" you can type in an IP address, or a friendly name. You may want to try "www.microsoft", "27.0.0.1" (this is your local computer) or another IP such as "12.34.56.78"
+
+In the edit box labelled "Port" you must enter a port number to connect to. (These are explained in the tutorial). To connect to a web site it is usually port 80. If you are connecting to the SimpleServer example, then the port is the one you typed in.
+
+Click the button labelled "Connect". This function will block. If you type an invalid hostname such as "WWW.AnInvalidWebsite.Com" or there is no socket listening to the port you specified on the host (for example trying to connect to www.microsoft.com on port 81) then the connect function can take as long as 10 seconds or sometimes even more
